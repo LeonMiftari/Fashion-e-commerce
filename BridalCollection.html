@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Trajan+Pro:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+    
+
+    <title>EriAjeti</title>
+    <style>
+
+body {
+  font-family: 'Trajan Pro', serif;
+}
+
+
+h1, p, .text-end {
+  font-family: 'Trajan Pro', serif;
+  font-weight: bold;
+}
+
+       
+.navbar{
+    background-color: rgba(255, 255, 255, 0.642); 
+           position: relative;
+           
+}
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; 
+  left: 0;
+  right: 0;
+  height: 0.6px; 
+  background-color: black;
+  z-index: -1;
+}
+
+
+
+    .nav-link {
+    font-size: 16px;
+    color: black;
+    background-color: transparent;
+    border-radius: 20%;
+    padding: 5px 5px;
+    border: 2px solid black;
+    margin-right: 15px;
+  margin-top: 10px;
+    width: 120px; 
+    text-align: center; 
+}
+
+
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  width: 24px;
+  height: 24px;
+  display: block;
+  padding: 6px;
+}
+
+
+
+
+
+
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:active,
+  .navbar-nav .nav-link:focus {
+    color: black;
+  }
+  
+
+  .navbar-nav .nav-link:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+   
+
+.search-logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 10px;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.search-logo i {
+    font-size: 20px;
+}
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 10px;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+   /* Search Logo*/
+   @media (max-width: 767px) { 
+    .search-container {
+        margin-left: auto; 
+        margin-right: 10px; 
+    }
+    .search-text {
+        display: none; 
+    }
+}
+
+
+ 
+
+
+
+    .mega-menu {
+  display:none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color:rgba(255, 255, 255, 0.642); 
+  width: 100%;
+  backdrop-filter: blur(5px);
+  z-index: 9999; 
+  height: 67vh;
+
+        }
+
+
+
+
+        .mega-menu .row{
+  align-items: center;
+  display: flex;
+  margin-top: 100px;
+}
+
+
+
+.mega-menu ul {
+  list-style: none;
+  padding: 0;
+}
+.mega-menu li {
+  padding: 5px;
+ 
+}
+.show {
+ display: block;
+      }
+.mega-menu a {
+  color:rgb(242, 241, 241);
+  text-decoration: none;
+  display: block;
+}
+
+
+.mega-menu li ,h5{
+ justify-content:center;
+  display: flex;
+  
+}
+
+
+
+   .erijeti-paragraph {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  position:absolute;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards; 
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; 
+  }
+  100% {
+    opacity: 1; 
+  }
+}
+
+
+.nav-item:hover .mega-menu {
+  display: block;
+}
+* Style h5 for the first and second columns in the mega menu */
+.mega-menu .col-lg-6:nth-child(1) h5,
+.mega-menu .col-lg-6:nth-child(2) h5 {
+  color: black; 
+}
+
+.mega-menu .col-lg-6:nth-child(1) h5,
+.mega-menu .col-lg-6:nth-child(2) h5 {
+  color: black; 
+}
+
+
+.mega-menu .col-lg-6 .social-media {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.mega-menu .col-lg-6 .social-media a.social-icon {
+  width: 50px; 
+  height: 50px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px; 
+  color: black; 
+  border-radius: 50%; 
+  margin: 5px; 
+  transition: transform 0.3s ease-in-out; 
+}
+
+
+.mega-menu .col-lg-6 .social-media a.social-icon:hover {
+  animation: spin 1s linear infinite; 
+}
+
+/* Keyframes for the spinning animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg); /* Starting angle of rotation */
+  }
+  to {
+    transform: rotate(360deg); /* Ending angle of rotation */
+  }
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.offcanvas {
+  font-family:unset;
+  background-color:rgba(255, 255, 255, 0.642); 
+ 
+  backdrop-filter: blur(5px);
+  color:black
+  
+}
+
+
+.offcanvas-body .nav-link {
+        border: none;
+        width: auto;
+       
+       
+    }
+    
+
+
+    .offcanvas-body .nav-link:hover {
+        border-bottom: 2px solid #0a0909; 
+        color: white;
+        
+    }
+
+
+ /* Center buttons hamburger menu*/
+@media (max-width: 767px) {
+  .center-mobile {
+    display: block;
+    width: 120px; 
+    text-align: center;
+    margin-left: 38%;
+    
+  }
+}
+.row{
+    margin-top: 10%;
+}
+
+
+
+.card {
+  border: none;
+  background-color: #f7f7f7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card .card-img-top {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.card .card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.card .card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card .card-text {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.card .btn-primary {
+  background-color: #4a4a4a;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+}
+
+
+.EA-card {
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.EA-card:hover {
+  transform: scale(1.05);
+}
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    max-width: 80%;
+}
+
+
+.footer {
+  
+    bottom: 0; 
+    left: 0;
+    width: 100%; 
+    padding: 40px 0;
+    background-color: white;
+    color: rgb(82, 78, 78);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; 
+}
+    
+   
+
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.footer ul li {
+    padding: 5px 50px;
+    text-align: center;
+}
+
+.footer .social {
+    padding: 20px 0;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: rgb(82, 78, 78);
+    border: 1px solid #686363;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity: 0.75;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    opacity: 1;
+    color: whitesmoke;
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.social-icon.animated:hover {
+    animation: spin 1s linear infinite;
+}
+
+.footer-col-md-4{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-right: 10px;
+}
+
+    .footer-col-md-4 {
+        
+        box-sizing: border-box;
+        padding: 20px;
+        border-right: 1px solid rgba(82, 78, 78, 0.8);
+    }
+
+    @media (max-width: 767px) {
+      .footer-col-md-4 {
+    border-right: none;
+    border-bottom: 1px solid rgba(82, 78, 78, 0.8);
+  }
+
+  .footer-col-md-4 {
+    border-bottom: 1px solid;
+  }
+}
+
+
+
+
+
+
+.scroll-background {
+    background-color: rgba(189, 187, 191, 0.8);
+}
+#scrollUpButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #6d52ae; 
+  color: #FFFFFF; 
+  border: none;
+  border-radius: 50%; 
+  padding: 10px 15px; 
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#scrollUpButton:hover {
+  opacity: 1;
+}
+
+#ErisFashionButton,
+#newCollectionButton {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+  .filter-sort-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  margin-top:100px; 
+  padding: 0 1rem; 
+}
+
+.filter-sort-bar i {
+  font-size: 15px; 
+  margin-right: 0.5rem; 
+}
+
+.filter-sort-bar p {
+  margin-bottom: 0; 
+}
+
+
+
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container">
+          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <p class="erijeti-paragraph .Eri">Eri Ajeti</p>
+          <div class="search-container">
+            <div class="search-logo">
+                <i class="fa fa-search"></i>
+            </div>
+           <span class="search-text">Search</span>
+           
+        </div>
+          
+          <div class="collapse navbar-collapse  justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ms-auto ">
+              <li class="nav-item">
+                <button class="nav-link  nav-link-start center-mobile" id="newCollectionButton">About</button>
+                <div class="mega-menu">
+                  <div class="container">
+                    <div class="row  justify-content-center ">
+                      <div class="col-lg-6">
+                        <h5>Contact Information</h5>
+                        <ul>
+                          <li>Phone: +1 123-456-7890</li>
+                          <li>Email: info@example.com</li>
+                          <li>Address: 123 Street, City, Country</li>
+                        </ul>
+                        <div class="social-media">
+                          <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                          <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                          <a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6 ">
+                        <a class="navbar-brand " href="#"><img src="images/EriNavBrand.png" style="width: 100%;"></a>
+                          
+                        </div>
+                      </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link center-mobile" id="ErisFashionButton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                  Collection
+              </button>
+          </li>
+          
+          
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasMenu">
+      <div class="offcanvas-header">
+          <h3 class="offcanvas-title"> Eri Ajeti</h3>
+          <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+          
+        <a class="nav-link" href="Home.html">Home</a>
+        <a class="nav-link" href="BridalCollection.html">Bridal Collection</a>
+        <a class="nav-link" href="HolidaysCollection.html">Holidays Collection</a>
+
+      </div>
+  </div>
+                
+ 
+              </li>
+    
+              </li>
+            
+            </ul>
+            <p class="erijeti-paragraph"href="Home.html">Eri Ajeti</p>
+          </div>
+        
+        </div>
+        
+
+
+
+
+
+    </div>
+      </nav>
+      <div class="container">
+        <h5 class="text-center mt-5"> Wedding Dresses</h5>
+
+        <div class="filter-sort-bar d-flex justify-content-between align-items-center mb-">
+          <div class="text-start">
+            <i class="fas fa-sliders-h"></i> Filter
+          </div>
+          <div class="text-end">
+            <p><strong id="itemCount">3</strong> items</p>
+          </div>
+        </div>
+        
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card EA-card" id="dress1">
+              <img src="images/Vello2.JPG" class="card-img-top" alt="Dress 1">
+              <div class="card-body">
+                <h5 class="card-title">Dress 1</h5>
+                <p class="card-text">Elegant and sophisticated dress for special occasions.</p>
+                <a href="Dress_1.html" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+        
+  
+          <div class="col-md-4 mb-4">
+            <div class="card EA-card" id="dress2">
+              <img src="images/Vello4.JPG" class="card-img-top" alt="Dress 2">
+              <div class="card-body">
+                <h5 class="card-title">Dress 2</h5>
+                <p class="card-text">A stunning bridal dress with intricate lace details.</p>
+                <a href="Dress_2.html" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+            
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card EA-card" id="dress3">
+              <img src="images/Vello2.JPG" class="card-img-top" alt="Dress 3">
+              <div class="card-body">
+                <h5 class="card-title">Dress 3</h5>
+                <p class="card-text">A timeless classic for the modern bride.</p>
+                <a href="Dress_3.html" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card EA-card">
+              <img src="images/Vello2.JPG" class="card-img-top" alt="Dress 1">
+              <div class="card-body">
+                <h5 class="card-title">Dress 4</h5>
+                <p class="card-text">Elegant and sophisticated dress for special occasions.</p>
+                <a href="Dress_4.html" class="btn btn-primary">View Details</a>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card EA-card">
+              <img src="images/Vello4.JPG" class="card-img-top" alt="Dress 2">
+              <div class="card-body">
+                <h5 class="card-title">Dress 5</h5>
+                <p class="card-text">A stunning bridal dress with intricate lace details.</p>
+                <a href="Dress_5.html" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card EA-card">
+              <img src="images/Vello2.JPG" class="card-img-top" alt="Dress 3">
+              <div class="card-body">
+                <h5 class="card-title">Dress 6</h5>
+                <p class="card-text">A timeless classic for the modern bride.</p>
+                <a href="Dress_6.html" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <hr>
+
+      <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-col-md-4">
+                    <ul>
+                        <li>Contact Information</li>
+                        <li>Phone: +1 123-456-7890</li>
+                        <li>Email: info@example.com</li>
+                        <li>Address: 123 Street, City, Country</li>
+                    </ul>
+                </div>
+               
+                <div class="col-md-4 footer-col-md-4">
+                    <ul>
+                        <li>About Us</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et libero id urna ultrices tincidunt.</li>
+                    </ul>
+                </div>
+               
+                <div class="col-md-4 footer-col-md-4">
+                    <ul>
+                        <li>Connect with Us</li>
+                        <li>
+                          <a href="#" class="social-icon animated"><i class="fab fa-facebook"></i></a>
+                          <a href="#" class="social-icon animated"><i class="fab fa-twitter"></i></a>
+                          <a href="#" class="social-icon animated"><i class="fab fa-instagram"></i></a>
+                          
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="copyright">© 2023 Leon Miftari. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+        <button id="scrollUpButton" title="Go to top">↑</button>
+  
+      
+  
+  
+       
+    </footer>
+    
+     
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+          $(document).ready(function() {
+              $('#newCollectionButton').click(function(e) {
+                  e.preventDefault();
+                  $('.mega-menu').toggleClass('show');
+              });
+  
+            
+              $(document).click(function(event) {
+                  const target = event.target;
+                  const megaMenu = $('.mega-menu');
+                  const newCollectionButton = $('#newCollectionButton')[0];
+                  
+                 
+                  if (!megaMenu.is(target) && !newCollectionButton.isEqualNode(target)) {  
+                      megaMenu.removeClass('show');
+                  }
+              });
+          });
+      </script>
+<script>
+  $(document).ready(function() {
+    $('#scrollUpButton').click(function() {
+        $('html, body').animate({ scrollTop: 0 }, 100); 
+        return false;
+    });
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) { 
+            $('#scrollUpButton').fadeIn();
+        } else {
+            $('#scrollUpButton').fadeOut();
+        }
+    });
+});
+
+</script>
+
+
+<script>
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+        $('.navbar').addClass('scroll-background');
+    } else {
+        $('.navbar').removeClass('scroll-background');
+    }
+});
+</script>
+
+
+
+     
+<script>
+  $(document).ready(function() {
+    var itemCount = $('.EA-card').length;
+    $('#itemCount').text(itemCount);
+  });
+</script>
+
+ 
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     
+    
+</body>
+</html>

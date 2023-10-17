@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Trajan+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+
+  <title>EriAjeti</title>
+  <style>
+    body {
+      font-family: 'Trajan Pro', serif;
+    }
+
+
+    h1,
+    p,
+    .text-end {
+      font-family: 'Trajan Pro', serif;
+      font-weight: bold;
+    }
+
+
+    .navbar {
+      background-color: transparent;
+      transition: background-color 0.3s ease-in-out;
+
+
+    }
+
+    .navbar:hover {
+      background-color: rgba(255, 255, 255, 0.642);
+
+    }
+
+    .nav-link {
+      font-size: 16px;
+      color: white;
+      background-color: transparent;
+      border-radius: 20%;
+      padding: 5px 5px;
+      border: 3px solid rgb(255, 255, 255);
+      margin-right: 15px;
+      margin-top: 10px;
+      width: 120px;
+      text-align: center;
+    }
+
+    .search-logo {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+      margin-left: 10px;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .search-logo i {
+      font-size: 20px;
+    }
+
+
+    .search-logo:hover {
+      color: #f0f0f0;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+      margin-left: 10px;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+
+    .navbar:hover .search-text {
+      color: black;
+    }
+
+    .navbar:hover .search-logo {
+      color: black;
+    }
+
+    .navbar:hover .navbar-toggler-icon {
+      filter: invert(100%);
+    }
+
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      width: 24px;
+      height: 24px;
+      display: block;
+      padding: 6px;
+    }
+
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:active,
+    .navbar-nav .nav-link:focus {
+      color: white;
+    }
+
+
+    .navbar-nav .nav-link:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .navbar:hover .nav-link {
+      color: black;
+      border-color: black;
+    }
+
+    .navbar:hover .border-radius {
+      color: black;
+    }
+
+
+    .mega-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.642);
+      width: 100%;
+      backdrop-filter: blur(5px);
+      z-index: 9999;
+      height: 67vh;
+
+    }
+
+    .mega-menu .row {
+      align-items: center;
+      display: flex;
+      margin-top: 100px;
+    }
+
+
+
+    .mega-menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .mega-menu li {
+      padding: 5px;
+
+    }
+
+    .show {
+      display: block;
+    }
+
+    .mega-menu a {
+      color: rgb(242, 241, 241);
+      text-decoration: none;
+      display: block;
+    }
+
+    .mega-menu li,
+    h5 {
+      justify-content: center;
+      display: flex;
+
+    }
+
+
+
+    .erijeti-paragraph {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+      position: fixed;
+      top: 4%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    .navbar:hover .erijeti-paragraph {
+      color: black;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+
+
+    .nav-item:hover .mega-menu {
+      display: block;
+    }
+
+    * Style h5 for the first and second columns in the mega menu */ .mega-menu .col-lg-6:nth-child(1) h5,
+    .mega-menu .col-lg-6:nth-child(2) h5 {
+      color: black;
+    }
+
+  
+    .mega-menu .col-lg-6:nth-child(1) h5,
+    .mega-menu .col-lg-6:nth-child(2) h5 {
+      color: black;
+      
+    }
+
+  
+    .mega-menu .col-lg-6 .social-media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    .mega-menu .col-lg-6 .social-media a.social-icon {
+      width: 50px;
+      
+      height: 50px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      
+      color: black;
+     
+      border-radius: 50%;
+      
+      margin: 5px;
+
+      transition: transform 0.3s ease-in-out;
+     
+    }
+
+    
+    .mega-menu .col-lg-6 .social-media a.social-icon:hover {
+      animation: spin 1s linear infinite;
+      
+    }
+
+    /* Keyframes for the spinning animation */
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+        /* Starting angle of rotation */
+      }
+
+      to {
+        transform: rotate(360deg);
+        /* Ending angle of rotation */
+      }
+    }
+
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+
+
+    .offcanvas {
+      font-family: unset;
+      background-color: rgba(255, 255, 255, 0.642);
+
+      backdrop-filter: blur(5px);
+      color: black
+    }
+
+
+    .offcanvas-body .nav-link {
+      border: none;
+      width: auto;
+
+
+    }
+
+
+
+    .offcanvas-body .nav-link:hover {
+      border-bottom: 2px solid #0a0909;
+      color: white;
+
+    }
+
+
+    .video-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+
+    }
+    .video-section .explore-title {
+    position: absolute;
+    top: 80%; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px; 
+    color: white; 
+    z-index: 1; 
+}
+.video-section2 .explore-title {
+    position: absolute;
+    top: 80%; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px; 
+    color: white; 
+    z-index: 1; 
+}
+.video-section3 .explore-title {
+    position: absolute;
+    top: 80%; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px; 
+    color: white; 
+    z-index: 1; 
+}
+
+    .video-section video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-section2 {
+      position: relative;
+      width: 100%;
+      height: 110vh;
+      overflow: hidden;
+
+    }
+
+    .video-section2 video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-section3 {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+
+    }
+
+    .video-section3 video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+
+    .FirsVideo {
+      position: relative;
+    }
+
+
+    .video-link {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 15px;
+      color: white;
+      background-color: transparent;
+      border-radius: 20%;
+      padding: 12px 9px;
+      border: 2px solid rgb(255, 255, 255);
+      width: 200px;
+      text-align: center;
+      text-decoration: none;
+      transition: border-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    }
+
+    .video-link:hover {
+      color: white;
+      border-color: white;
+      border-radius: 4px;
+
+    }
+
+    .LastSection {
+      height: auto;
+      margin-bottom: 145px;
+    }
+
+    .row {
+      margin-top: 90px;
+    }
+
+    .custom-last-section-col-md-4 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-img-top {
+      width: 100%;
+      max-height: 200px;
+      border: none;
+      object-fit: fill;
+      aspect-ratio: 3/2;
+
+
+    }
+
+    .card {
+      border: 0px;
+    }
+
+    h4 {
+      margin-top: 70px;
+      text-align: center;
+    }
+
+    /* Search Logo */
+    @media (max-width: 767px) {
+
+      /* */
+      .search-container {
+        margin-left: auto;
+        margin-right: 10px;
+      }
+
+      .search-text {
+        display: none;
+      }
+    }
+
+
+    /* Buttons hamburger menu*/
+    @media (max-width: 767px) {
+      .center-mobile {
+        display: block;
+        width: 120px;
+        text-align: center;
+        margin-left: 38%;
+
+      }
+    }
+
+
+    /* Video 1*/
+    @media (max-width: 767px) {
+      .video-section video {
+        object-position: left;
+      }
+    }
+
+    /* Footer Styles */
+
+    .footer {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 40px 0;
+      background-color: rgba(189, 187, 191, 0.8);
+      color: rgb(82, 78, 78);
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      
+    }
+
+
+
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 0;
+      text-align: left;
+    }
+
+    .footer ul li {
+      padding: 5px 50px;
+      text-align: center;
+    }
+
+    .footer .social {
+      padding: 20px 0;
+    }
+
+    .social-icon {
+      font-size: 24px;
+      color: rgb(82, 78, 78);
+      border: 1px solid #686363;
+      width: 40px;
+      height: 40px;
+      line-height: 38px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 50%;
+      margin: 0 8px;
+      opacity: 0.75;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.2);
+      opacity: 1;
+      color: whitesmoke;
+    }
+
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .social-icon.animated:hover {
+      animation: spin 1s linear infinite;
+    }
+
+    .footer-col-md-4 {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      border-right: 10px;
+    }
+
+    .footer-col-md-4 {
+      
+      box-sizing: border-box;
+      padding: 20px;
+      border-right: 1px solid rgba(82, 78, 78, 0.8);
+    }
+
+    @media (max-width: 767px) {
+      .footer-col-md-4 {
+        border-right: none;
+        border-bottom: 1px solid rgba(82, 78, 78, 0.8);
+      }
+
+      .footer-col-md-4 {
+        border-bottom: 1px solid;
+      }
+    }
+
+
+
+
+
+    
+    .scroll-background {
+      background-color: rgba(189, 187, 191, 0.8);
+    }
+    #scrollUpButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #6d52ae; 
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50%; 
+  padding: 10px 15px; 
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#scrollUpButton:hover {
+  opacity: 1;
+}
+
+
+
+
+
+    #ErisFashionButton,
+    #newCollectionButton {
+      border: none;
+      background-color: transparent;
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg  fixed-top ">
+    <div class="container">
+
+
+
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <p class="erijeti-paragraph .Eri">Eri Ajeti</p>
+      <div class="search-container">
+        <div class="search-logo">
+          <i class="fa fa-search"></i>
+        </div>
+        <span class="search-text">Search</span>
+
+      </div>
+
+      <div class="collapse navbar-collapse  justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ms-auto ">
+          <li class="nav-item">
+            <button class="nav-link  nav-link-start center-mobile" id="newCollectionButton">About</button>
+            <div class="mega-menu">
+              <div class="container">
+                <div class="row  justify-content-center ">
+                  <div class="col-lg-6">
+                    <h5>Contact Information</h5>
+                    <ul>
+                      <li>Phone: +1 123-456-7890</li>
+                      <li>Email: info@example.com</li>
+                      <li>Address: 123 Street, City, Country</li>
+                    </ul>
+
+                    <div class="social-media">
+                      <a href="#" class="social-icon animated"><i class="fab fa-facebook"></i></a>
+                      <a href="#" class="social-icon animated"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="social-icon animated"><i class="fab fa-instagram"></i></a>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 ">
+                    <a class="navbar-brand " href="#"><img src="images/EriNavBrand.png" style="width: 100%;"></a>
+
+                  </div>
+                </div>
+              </div>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link center-mobile" id="ErisFashionButton" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasMenu">
+              Collection
+            </button>
+          </li>
+
+          <!-- Off-canvas menu -->
+          <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasMenu">
+            <div class="offcanvas-header">
+              <h3 class="offcanvas-title"> Eri Ajeti</h3>
+              <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+
+              <a class="nav-link" href="BridalCollection.html">Bridal Collection</a>
+              <a class="nav-link" href="HolidaysCollection.html">Holidays Collection</a>
+              <a class="nav-link" href="Contact.html">Contact</a>
+
+            </div>
+          </div>
+
+
+          </li>
+
+        </ul>
+        <p class="erijeti-paragraph">Eri Ajeti</p>
+      </div>
+
+    </div>
+
+    </div>
+  </nav>
+  <div class="FirsVideo">
+    <section class="video-section">
+      <video autoplay loop muted>
+        <source src="video/Model6.mp4" type="video/mp4">
+      </video>
+      <h1 class="explore-title">Holidays Collection</h1>
+      <a href="HolidaysCollection.html" class="video-link">Explore the Collection</a>
+
+    </section>
+  </div>
+  
+
+
+  <div class="SecondVideo">
+    <section class="video-section2">
+      <video autoplay loop muted>
+        <source src="video/Vello.MP4" type="video/mp4">
+      </video>
+      <h1 class="explore-title">Bridal Collection</h1>
+      <a href="BridalCollection.html" class="video-link">Explore the Collection</a>
+    </section>
+  </div>
+
+
+
+  <div class="ThirdVideo">
+    <section class="video-section3">
+      <video autoplay loop muted>
+        <source src="video/Dress.mp4" type="video/mp4">
+      </video>
+      <h1 class="explore-title">Explore now!</h1>
+      <a href="#" class="video-link" id="exploreButton">Explore the Collection</a>
+    </section>
+  </div>
+
+  <div class="LastSection">
+    <h4>Latest news about fashion</h4>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 custom-last-section-col-md-4">
+
+          <div class="card " style="width: 22rem;">
+            <img src="images/dua.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Dua Lipa's collaborations with cutting-edge designers and her ability to seamlessly
+                blend contrasting styles.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 custom-last-section-col-md-4">
+          <div class="card" style="width: 22rem;">
+            <img src="images/dua3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Gigi's Dazed appearances have captured her ability to effortlessly embody diverse
+                styles. .</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 custom-last-section-col-md-4">
+
+          <div class="card" style="width: 22rem;">
+            <img src="images/dua1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Through her Dazed features, Irina's fashion journey has come alive, showcasing her
+                ability to channel sensuality.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-col-md-4">
+          <ul>
+            <li>Contact Information</li>
+            <li>Phone: +1 123-456-7890</li>
+            <li>Email: info@example.com</li>
+            <li>Address: 123 Street, City, Country</li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 footer-col-md-4">
+          <ul>
+            <li>About Us</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et libero id urna ultrices tincidunt.</li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 footer-col-md-4">
+          <ul>
+            <li>Connect with Us</li>
+            <li>
+              <a href="#" class="social-icon animated"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="social-icon animated"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon animated"><i class="fab fa-instagram"></i></a>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="copyright">© 2023 Leon Miftari. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+    <button id="scrollUpButton" title="Go to top">↑</button>
+
+
+  </footer>
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#newCollectionButton').click(function (e) {
+        e.preventDefault();
+        $('.mega-menu').toggleClass('show');
+      });
+
+      $(document).click(function (event) {
+        const target = event.target;
+        const megaMenu = $('.mega-menu');
+        const newCollectionButton = $('#newCollectionButton')[0];
+
+       
+        if (!megaMenu.is(target) && !newCollectionButton.isEqualNode(target)) {
+          megaMenu.removeClass('show');
+        }
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $('#scrollUpButton').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 100); 
+        return false;
+      });
+
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) { 
+          $('#scrollUpButton').fadeIn();
+        } else {
+          $('#scrollUpButton').fadeOut();
+        }
+      });
+    });
+
+  </script>
+
+
+  <script>
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        $('.navbar').addClass('scroll-background');
+      } else {
+        $('.navbar').removeClass('scroll-background');
+      }
+    });
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
